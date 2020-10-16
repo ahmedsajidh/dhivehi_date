@@ -1,0 +1,21 @@
+{
+    "name": "sajidh/dhivehi_date",
+    "description": "Change dhivehi date to redable format",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ahmed sajidh",
+            "email": "ahmedsajidh@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        
+    },
+    "autoload": {
+        "psr-4": {
+            "Sajidh\\Dhivehidate\\" : "src/"
+        }
+    }
+}
+
