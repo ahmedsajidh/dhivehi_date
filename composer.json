@@ -1,5 +1,5 @@
 {
-    "name": "sajidh/dhivehi_date",
+    "name": "sajidh/dhivehi-date",
     "description": "Change dhivehi date to redable format",
     "license": "MIT",
     "authors": [
@@ -9,9 +9,6 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {
-        
-    },
     "autoload": {
         "psr-4": {
             "Sajidh\\Dhivehidate\\" : "src/"
