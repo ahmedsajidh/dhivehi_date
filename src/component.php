@@ -25,4 +25,8 @@ class Component{
     
         return join(' ', $ret);
     }
+    public static function thaanadate($oldtime) {
+        $ctime = time() - strtotime($oldtime);
+        return self::thaana_date($ctime);
+    }
 }

@@ -9,8 +9,9 @@ use Sajidh\Dhivehidate\Component;
  */
 class Dhivehidate extends Component
 {
-    public function thaanadate($oldtime) {
+    public function dhivehidate($oldtime)
+    {
         $ctime = time() - strtotime($oldtime);
-        return $this->thaana_date($ctime);  
+        return $this-> thaana_date($ctime);
     }
 }
