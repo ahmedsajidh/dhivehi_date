@@ -2,7 +2,6 @@
 
 namespace Sajidh\Dhivehidate;
 
-use Jenssegers\Date\Date;
 use Sajidh\Dhivehidate\Component;
 
 class Dhivehidate extends Component
@@ -19,7 +18,7 @@ class Dhivehidate extends Component
 
         $timestamp =strtotime($oldtime);
 
-        if (date('D', $timestamp) != date('D'))
+        if (date('D', $timestamp) == date('D'))
         {
             return $this->thaana_date($ctime);
         }
