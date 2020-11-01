@@ -10,18 +10,12 @@ class Component implements Imonthday {
      */
     public function thaana_date($secs){
 
-        $bit = self::bit($secs);
-
-        foreach($bit as $x => $y){
+        foreach(self::bit($secs) as $x => $y){
             if($y > 1)$ret[] =   $y.$x;
             if($y == 1)$ret[] =  $y.$x;
         }
 //        array_splice($ret, count($ret)-1, 0, 'އަދި');
-        $ret[] = 'ކުރިން';
-
-
-        return join(' ', $ret);
-
+        return join(' ', $ret).' '.$ret[] = 'ކުރިން';
     }
 
     /**
@@ -30,7 +24,7 @@ class Component implements Imonthday {
      */
     public static function bit($secs):array
     {
-        $bit = array(
+        return $bit = array(
             ' އަހަރު'        => $secs / 31556926 % 12,
             ' ހަފްތާ'        => $secs / 604800 % 52,
             ' ދުވަސް'        => $secs / 86400 % 7,
@@ -38,8 +32,6 @@ class Component implements Imonthday {
             ' މިނެޓް'    => $secs / 60 % 60,
             ' ސިކުންތު'    => $secs % 60
         );
-
-        return $bit;
     }
 
     /**
@@ -47,8 +39,7 @@ class Component implements Imonthday {
      * @return string
      */
     public static function thaanadate($oldtime) {
-        $ctime = time() - strtotime($oldtime);
-        return self::thaana_date($ctime);
+        return self::thaana_date(time() - strtotime($oldtime));
     }
 
     /**
@@ -58,7 +49,7 @@ class Component implements Imonthday {
     public static function normalDate($timestamp)
     {
 
-        $dhivehidate = '';
+        $normaldate = '';
 
         for ($i = 0; $i < strlen(Imonthday::FORMAT); $i++) {
 
@@ -66,7 +57,7 @@ class Component implements Imonthday {
                 case 'D':
                 case 'l':
 
-                    $dhivehidate .= Imonthday::DAYOFWEEK[getdate($timestamp)['wday']];
+                $normaldate .= Imonthday::DAYOFWEEK[getdate($timestamp)['wday']];
                     break;
 
                 case 'S':
@@ -76,30 +67,30 @@ class Component implements Imonthday {
                 case 'F':
                 case 'M':
 
-                    $dhivehidate .= Imonthday::MONTHS[getdate($timestamp)['mon']];
+                $normaldate .= Imonthday::MONTHS[getdate($timestamp)['mon']];
                     break;
 
                 case 'a':
                 case 'A':
 
-                    $dhivehidate .= (getdate($timestamp)['hours'] < 12) ? Imonthday::AMPM['am'] : Imonthday::AMPM['pm'];
+                $normaldate .= (getdate($timestamp)['hours'] < 12) ? Imonthday::AMPM['am'] : Imonthday::AMPM['pm'];
                     break;
 
                 case ' ':
-                    $dhivehidate .= ' ';
+                    $normaldate .= ' ';
                     break;
 
                 case '\\':
 
                     $i++;
-                    $dhivehidate .= Imonthday::FORMAT[$i];
+                    $normaldate .= Imonthday::FORMAT[$i];
                     break;
 
                 default:
-                    $dhivehidate .= date(Imonthday::FORMAT[$i], $timestamp);
+                    $normaldate .= date(Imonthday::FORMAT[$i], $timestamp);
             }
         }
 
-        return $dhivehidate;
+        return $normaldate;
     }
 }
