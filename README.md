@@ -10,14 +10,15 @@ composer require sajidh/dhivehi-date
 
 #### Usage
 
-#if more than 24h human readable format will automatically change to YY/MM/DD 
+_if more than 24h human readable format will automatically change to YY/MM/DD_ 
 
 ```php
 use Sajidh\Dhivehidate\Dhivehidate;
 
 $date = new Dhivehidate();
 
-echo "<div style='direction: rtl; font-family: Faruma;'>".$date->thaanadate("2020-10-24T18:36:16.000000Z")."\n </div>";
+echo "<div style='direction: rtl; font-family: Faruma;'>"..$date->dhivehidate("2020-10-24T18:36:16.000000Z")."\n </div>";
+
 ```
 
 #### Sample
