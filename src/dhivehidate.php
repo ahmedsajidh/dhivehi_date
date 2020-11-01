@@ -14,15 +14,11 @@ class Dhivehidate extends Component
      */
     public function dhivehidate($oldtime)
     {
-        $ctime = time() - strtotime($oldtime);
-
-        $timestamp =strtotime($oldtime);
-
-        if (date('D', $timestamp) == date('D'))
+        if (date('D', strtotime($oldtime)) == date('D'))
         {
-            return $this->thaana_date($ctime);
+            return $this->thaana_date(time() - strtotime($oldtime));
         }
-        return parent::normalDate($timestamp);
+        return parent::normalDate(strtotime($oldtime));
 
     }
 }
