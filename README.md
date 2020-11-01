@@ -10,6 +10,8 @@ composer require sajidh/dhivehi-date
 
 #### Usage
 
+#if more than 24h human readable format will automatically change to YY/MM/DD 
+
 ```php
 use Sajidh\Dhivehidate\Dhivehidate;
 
@@ -20,4 +22,4 @@ echo "<div style='direction: rtl; font-family: Faruma;'>".$date->thaanadate("202
 
 #### Sample
 
-![alt text](https://github.com/ahmedsajidh/dhivehi_date/blob/main/sample/image.jpg?raw=true)
+![alt text](https://github.com/ahmedsajidh/dhivehi_date/blob/main/image/sample.jpg?raw=true)
