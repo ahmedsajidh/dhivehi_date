@@ -21,4 +21,14 @@ class Dhivehidate extends Component
         return parent::normalDate(strtotime($oldtime));
 
     }
+    /**
+     * @param 
+     * @return string
+     */
+    public function datenow()
+    {
+        
+        return parent::normalDate(strtotime(date('j-M-Y')));
+
+    }
 }
