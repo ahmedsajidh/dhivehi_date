@@ -19,6 +19,8 @@ $date = new Dhivehidate();
 
 echo "<div style='direction: rtl; font-family: Faruma;'>"..$date->dhivehidate("2020-10-24T18:36:16.000000Z")."\n </div>";
 
+echo "<div style='direction: rtl; font-family: Faruma;'>"..$date->datenow()."\n </div>";
+
 ```
 
 #### Sample
