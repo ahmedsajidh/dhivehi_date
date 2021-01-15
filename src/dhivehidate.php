@@ -14,7 +14,7 @@ class Dhivehidate extends Component
      */
     public function dhivehidate($oldtime)
     {
-        if (date('j-M-Y', strtotime($oldtime)) > $this->thaana_date(time()))
+        if (strtotime($oldtime) > time() - 86400)
         {
             return $this->thaana_date(time() - strtotime($oldtime));
         }
