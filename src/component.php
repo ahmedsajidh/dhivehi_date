@@ -2,17 +2,22 @@
 
 namespace Sajidh\Dhivehidate;
 
-class Component implements Imonthday {
-
+class Component implements Imonthday
+{
     /**
      * @param $secs
+     *
      * @return string
      */
-    public function thaana_date($secs){
-
-        foreach(self::bit($secs) as $x => $y){
-            if($y > 1)$ret[] =   $y.$x;
-            if($y == 1)$ret[] =  $y.$x;
+    public function thaana_date($secs)
+    {
+        foreach (self::bit($secs) as $x => $y) {
+            if ($y > 1) {
+                $ret[] = $y.$x;
+            }
+            if ($y == 1) {
+                $ret[] = $y.$x;
+            }
         }
 //        array_splice($ret, count($ret)-1, 0, 'އަދި');
         return join(' ', $ret).' '.$ret[] = 'ކުރިން';
@@ -20,39 +25,41 @@ class Component implements Imonthday {
 
     /**
      * @param $secs
+     *
      * @return array
      */
-    public static function bit($secs):array
+    public static function bit($secs): array
     {
-        return $bit = array(
-            ' އަހަރު'        => $secs / 31556926 % 12,
-            ' ހަފްތާ'        => $secs / 604800 % 52,
-            ' ދުވަސް'        => $secs / 86400 % 7,
+        return $bit = [
+            ' އަހަރު'          => $secs / 31556926 % 12,
+            ' ހަފްތާ'          => $secs / 604800 % 52,
+            ' ދުވަސް'          => $secs / 86400 % 7,
             ' ގަޑިއިރު'        => $secs / 3600 % 24,
-            ' މިނެޓް'    => $secs / 60 % 60,
-            ' ސިކުންތު'    => $secs % 60
-        );
+            ' މިނެޓް'          => $secs / 60 % 60,
+            ' ސިކުންތު'        => $secs % 60,
+        ];
     }
 
     /**
      * @param $oldtime
+     *
      * @return string
      */
-    public static function thaanadate($oldtime) {
+    public static function thaanadate($oldtime)
+    {
         return self::thaana_date(time() - strtotime($oldtime));
     }
 
     /**
      * @param $timestamp
+     *
      * @return string
      */
     public static function normalDate($timestamp)
     {
-
         $normaldate = '';
 
         for ($i = 0; $i < strlen(Imonthday::FORMAT); $i++) {
-
             switch (Imonthday::FORMAT[$i]) {
                 case 'D':
                 case 'l':
