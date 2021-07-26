@@ -1,5 +1,5 @@
 
-
+![GitHub](https://img.shields.io/github/license/ahmedsajidh/dhivehi_date)
 
 
 # dhivehi-date
