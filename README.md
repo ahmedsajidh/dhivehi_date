@@ -1,6 +1,6 @@
 
 ![GitHub](https://img.shields.io/github/license/ahmedsajidh/dhivehi_date)
-
+![GitHub](https://github.styleci.io/repos/7548986/shield)
 
 # dhivehi-date
 
